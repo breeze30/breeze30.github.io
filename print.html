@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>พรทิพย์ กรุดเพชร — Portfolio (PDF)</title>
+<style>
+  @page{size:13.333in 7.5in;margin:0}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:"Kanit",system-ui,sans-serif;font-weight:300;color:#17191c;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:13.333in;height:7.5in;page-break-after:always;position:relative;overflow:hidden;padding:.55in .7in;display:flex;flex-direction:column}
+  .page:last-child{page-break-after:auto}
+  .bar{position:absolute;left:0;top:0;width:.09in;height:100%;background:#1f6f3f}
+
+  /* cover */
+  .cover{justify-content:center;background:#f5f5f2}
+  .cover .eyebrow{font-size:12pt;letter-spacing:.14em;text-transform:uppercase;color:#8a9099;font-weight:400;display:flex;align-items:center;gap:10px}
+  .cover .eyebrow::before{content:"";width:.35in;height:2px;background:#1f6f3f}
+  .cover h1{margin:.12in 0 .05in;font-size:46pt;font-weight:600;letter-spacing:-.5px;line-height:1.05}
+  .cover .role{font-size:17pt;color:#4b5059;font-weight:400;margin:0}
+  .cover .intro{max-width:7.5in;font-size:12.5pt;color:#4b5059;margin:.25in 0 0}
+  .cover .mail{display:inline-block;margin-top:.3in;background:#17191c;color:#fff;border-radius:999px;padding:.09in .22in;font-size:11.5pt;font-weight:400}
+  .cover .stats{display:flex;gap:.45in;margin-top:.45in;padding-top:.28in;border-top:1px solid #e4e4df}
+  .cover .stats div{font-size:9pt;color:#8a9099;letter-spacing:.06em;text-transform:uppercase}
+  .cover .stats b{display:block;font-size:20pt;font-weight:600;color:#17191c;letter-spacing:0;line-height:1.1}
+
+  /* section divider */
+  .divider{justify-content:center;background:#17191c;color:#fff}
+  .divider .n{font-size:12pt;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:400}
+  .divider h2{margin:.1in 0 .06in;font-size:44pt;font-weight:600;letter-spacing:-.5px}
+  .divider p{margin:0;font-size:14pt;color:rgba(255,255,255,.75)}
+  .divider ul{margin:.4in 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.1in .3in;font-size:12pt;color:rgba(255,255,255,.85);font-weight:400}
+  .divider ul li::before{content:"— ";color:#8fd0a8}
+
+  /* project */
+  .proj .head{display:flex;align-items:baseline;gap:.2in;margin-bottom:.18in}
+  .proj .cat{font-size:9.5pt;letter-spacing:.12em;text-transform:uppercase;color:#1f6f3f;font-weight:500}
+  .proj h3{margin:0;font-size:22pt;font-weight:600;line-height:1.15}
+  .proj .desc{margin:.04in 0 0;font-size:11.5pt;color:#4b5059}
+  .proj .num{margin-left:auto;font-size:9.5pt;color:#8a9099;font-variant-numeric:tabular-nums}
+  .proj .fig{flex:1;min-height:0;border-radius:.14in;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f1f1ed;position:relative}
+  .proj .fig::before{display:none}
+  .proj .fig img{position:relative;max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .foot{position:absolute;left:.7in;right:.7in;bottom:.28in;display:flex;justify-content:space-between;font-size:8.5pt;color:#8a9099}
+</style>
+</head>
+<body id="root"></body>
+<script>
+const PROFILE = {
+  name: "พรทิพย์ กรุดเพชร",
+  role: "Developer · Web & Mobile Application",
+  intro: "รวมผลงานที่ร่วมพัฒนา ทั้งเว็บไซต์ แอปพลิเคชันบนมือถือ Digital Sales Kit ตู้คีออสก์ และระบบเฉพาะธุรกิจ",
+  email: "breeze.sut@gmail.com"
+};
+const CATEGORIES = [
+  {
+    id: "website", title: "Website", sub: "เว็บไซต์องค์กรและเว็บไซต์อสังหาริมทรัพย์",
+    projects: [
+      { name: "The Agent", desc: "เว็บไซต์อสังหาริมทรัพย์ Urban Link Property Expert — ค้นหาโครงการ แนะนำโครงการ และเครื่องคำนวณสินเชื่อ", images: ["img/the-agent.jpg"] },
+      { name: "Autobacs", desc: "Responsive Website & Service Booking — เว็บไซต์และระบบจองบริการ", images: ["img/autobacs.jpg"] },
+      { name: "Raimond Land", desc: "Corporate Website", images: ["img/raimond-land.jpg"] },
+      { name: "Plan-B", desc: "Plan B Media Plc. — Corporate Website", images: ["img/plan-b.jpg"] }
+    ]
+  },
+  {
+    id: "mobile-app", title: "Mobile App", sub: "แอปพลิเคชันสำหรับลูกบ้านและผู้ใช้บริการ บน iOS / Android",
+    projects: [
+      { name: "Smart World", desc: "แอปลูกบ้าน — ทุกเรื่องบ้านครบจบในแอปเดียว", images: ["img/smart-world.jpg"] },
+      { name: "Peace", desc: "Resident Application — แอปพลิเคชันสำหรับลูกบ้าน", images: ["img/peace.jpg"] },
+      { name: "Fraser", desc: "Home+ Resident App Platform — Frasers Property (Thailand)", images: ["img/fraser.jpg"] },
+      { name: "Sabai", desc: "Mobile Application", images: ["img/sabai.jpg"] },
+      { name: "Primo", desc: "Primo Plus Resident App Platform — Primo Service Solutions", images: ["img/primo.jpg"] },
+      { name: "Rasika", desc: "Rasika Home App Platform — Rasika Property", images: ["img/rasika.jpg"] }
+    ]
+  },
+  {
+    id: "digital-sales-kit", title: "Digital Sales Kit", sub: "เครื่องมือนำเสนอบนแท็บเล็ตสำหรับทีมขาย",
+    projects: [
+      { name: "Landy Home", desc: "Digital Sales Kit บนแท็บเล็ต — นำเสนอแบบบ้าน แปลน และตารางราคาให้ลูกค้า", images: ["img/landy-home.jpg"] }
+    ]
+  },
+  {
+    id: "directory-kiosk", title: "Directory Kiosk", sub: "จอสัมผัสนำทางภายในศูนย์การค้า",
+    projects: [
+      { name: "Icon Siam", desc: "ICONSIAM Digital Wayfinder", images: ["img/icon-siam.jpg"] },
+      { name: "Terminal21", desc: "Terminal 21 Asok — Interactive Directory", images: ["img/terminal21.jpg"] }
+    ]
+  },
+  {
+    id: "business-system", title: "ระบบเฉพาะธุรกิจ", sub: "ระบบที่ออกแบบเฉพาะสำหรับการทำงานของลูกค้าแต่ละราย",
+    projects: [
+      { name: "IRIS", desc: "ระบบบริหารจัดการงานภายในองค์กร (Dispatch Board) — BAFS", images: ["img/iris.jpg"] },
+      { name: "BLMS — Betagro Livestock Management System", desc: "แอปบันทึกกิจกรรมฟาร์มปศุสัตว์สำหรับเกษตรกรในเครือเบทาโกร", images: ["img/blms.jpg"] },
+      { name: "EXAT — Contact Directory Kiosk", desc: "คีออสก์จอสัมผัสค้นหาและวิดีโอคอลหาเจ้าหน้าที่ การทางพิเศษแห่งประเทศไทย", images: ["img/exat.jpg"] }
+    ]
+  }
+];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const total = CATEGORIES.reduce((n,c)=>n+c.projects.length,0);
+let html = `<section class="page cover"><div class="bar"></div>
+  <div class="eyebrow">Portfolio</div><h1>${esc(PROFILE.name)}</h1><p class="role">${esc(PROFILE.role)}</p>
+  <p class="intro">${esc(PROFILE.intro)}</p><span class="mail">${esc(PROFILE.email)}</span>
+  <div class="stats"><div><b>${total}</b>ผลงาน</div><div><b>${CATEGORIES.length}</b>หมวด</div>${CATEGORIES.map(c=>`<div><b>${c.projects.length}</b>${esc(c.title)}</div>`).join('')}</div>
+  <div class="foot"><span>${esc(PROFILE.name)} — Portfolio</span><span>${esc(PROFILE.email)}</span></div></section>`;
+let n = 0;
+CATEGORIES.forEach((c,ci)=>{
+  html += `<section class="page divider"><div class="n">${String(ci+1).padStart(2,'0')} / ${c.projects.length} ผลงาน</div><h2>${esc(c.title)}</h2><p>${esc(c.sub||'')}</p>
+    <ul>${c.projects.map(p=>`<li>${esc(p.name)}</li>`).join('')}</ul></section>`;
+  c.projects.forEach(p=>{
+    n++;
+    html += `<section class="page proj"><div class="bar"></div>
+      <div class="head"><div><div class="cat">${esc(c.title)}</div><h3>${esc(p.name)}</h3>${p.desc?`<p class="desc">${esc(p.desc)}</p>`:''}</div><div class="num">${n} / ${total}</div></div>
+      <div class="fig" style="--bg:url('${esc(p.images[0])}')"><img src="${esc(p.images[0])}" alt=""></div>
+      <div class="foot"><span>${esc(PROFILE.name)} — Portfolio</span><span>${esc(PROFILE.email)}</span></div></section>`;
+  });
+});
+document.getElementById('root').innerHTML = html;
+</script>
+</html>
